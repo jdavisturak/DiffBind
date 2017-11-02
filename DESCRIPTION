@@ -1,6 +1,6 @@
 Package: DiffBind
 Type: Package
-Version: 2.2.12-ORB1
+Version: 2.2.12.2
 Title: Differential Binding Analysis of ChIP-Seq peak data
 Author: Rory Stark<rory.stark@cruk.cam.ac.uk>, Gord Brown
         <gdbzork@gmail.com>
@@ -20,3 +20,4 @@ LinkingTo: Rsamtools (>= 1.19.38), Rcpp
 Collate: core.R parallel.R counts.R contrast.R analyze.R io.R helper.R
         utils.R RcppExports.R cpp_wrapper.R DBA.R
 biocViews: Sequencing, ChIPSeq, DifferentialPeakCalling
+x
