@@ -61,7 +61,7 @@ pv.peakset <-
                T, bRemoveRandom = T,
             minOverlap = 2,bFast = F,bMakeMasks = T,skipLines =
                1, filter = NULL, counts = NULL,
-            bNormalizeScores = FALSE,
+            bNormalizeScores = FALSE
             ) {
       zeroVal <- -1
       bLog <- F
