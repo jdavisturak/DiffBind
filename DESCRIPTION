@@ -20,4 +20,3 @@ LinkingTo: Rsamtools (>= 1.19.38), Rcpp
 Collate: core.R parallel.R counts.R contrast.R analyze.R io.R helper.R
         utils.R RcppExports.R cpp_wrapper.R DBA.R
 biocViews: Sequencing, ChIPSeq, DifferentialPeakCalling
-x
