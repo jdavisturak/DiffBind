@@ -60,7 +60,9 @@ pv.peakset <-
             scoreCol = NULL, bLowerScoreBetter = NULL, bRemoveM =
                T, bRemoveRandom = T,
             minOverlap = 2,bFast = F,bMakeMasks = T,skipLines =
-               1, filter = NULL, counts = NULL) {
+               1, filter = NULL, counts = NULL,
+            bNormalizeScores = FALSE,
+            ) {
       zeroVal <- -1
       bLog <- F
       
@@ -228,10 +230,12 @@ pv.peakset <-
                   peaks <- peaks[tokeep,]
                }
             }
-            peaks[,scoreCol] <-
-               pv.normalize(peaks,scoreCol,zeroVal = zeroVal,bLog = bLog)
-            if (bLowerScoreBetter) {
-               peaks[,scoreCol] <- 1 - peaks[,scoreCol]
+            if (bNormalizeScores){
+                peaks[,scoreCol] <-
+                   pv.normalize(peaks,scoreCol,zeroVal = zeroVal,bLog = bLog)
+                if (bLowerScoreBetter) {
+                   peaks[,scoreCol] <- 1 - peaks[,scoreCol]
+                }
             }
             peaks <- peaks[,c(1:3,scoreCol)]
          }

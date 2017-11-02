@@ -10,7 +10,7 @@ PV_DEBUG <- FALSE
 pv.model <- function(model,mask,minOverlap=2,
                      samplesheet='sampleSheet.csv',config=data.frame(RunParallel=FALSE),
                      caller="raw",format, scorecol, bLowerBetter, skipLines=0,bAddCallerConsensus=T,
-                     bRemoveM=T, bRemoveRandom=T,filter,
+                     bRemoveM=T, bRemoveRandom=T,filter, bNormalizeScores = TRUE,
                      attributes) {
    
    if(missing(format))       format       <- NULL
@@ -220,7 +220,9 @@ pv.model <- function(model,mask,minOverlap=2,
                           controlBam  = as.character(samples$bamControl[i]),
                           filter      = peakfilter,
                           counts      = counts,
-                          bRemoveM=bRemoveM, bRemoveRandom=bRemoveRandom,skipLines=skipLines)
+                          bRemoveM=bRemoveM, bRemoveRandom=bRemoveRandom,skipLines=skipLines,
+                           bNormalizeScores = bNormalizeScores,
+                           )
    }
    
    model$samples <- samples
