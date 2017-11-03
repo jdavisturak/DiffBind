@@ -231,7 +231,7 @@ pv.peakset <-
                }
             }
             if (bNormalizeScores){
-                print "Normalizing scores"
+                print ("Normalizing scores")
                 peaks[,scoreCol] <-
                    pv.normalize(peaks,scoreCol,zeroVal = zeroVal,bLog = bLog)
                 if (bLowerScoreBetter) {

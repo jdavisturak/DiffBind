@@ -1105,25 +1105,24 @@ pv.orderfacs <- function(facvec,decreasing=F) {
 }
 
 pv.normalize <- function(peaks,pCol,zeroVal=-1,bLog=F,bDensity=F){
-   stop("test error")
-   # if(bDensity) {
-   #    width   <- peaks[,3] - peaks[,2]
-   #    width[width==0]=1
-   #    density <- peaks[,pCol]/width
-   #    res <- density/max(density)
-   # } else {
-   #    res <- peaks[,pCol]/max(peaks[,pCol])
-   # }
-   # if(bLog) {
-   #    res <- log2(res)
-   #    x <- res == -Inf
-   #    res[x] <- 1
-   #    res <- res - min(res)
-   #    res[x] <- zeroVal
-   # } else {
-   #    res[res == 0] <- zeroVal
-   # }
-   # return(res)
+   if(bDensity) {
+      width   <- peaks[,3] - peaks[,2]
+      width[width==0]=1
+      density <- peaks[,pCol]/width
+      res <- density/max(density)
+   } else {
+      res <- peaks[,pCol]/max(peaks[,pCol])
+   }
+   if(bLog) {
+      res <- log2(res)
+      x <- res == -Inf
+      res[x] <- 1
+      res <- res - min(res)
+      res[x] <- zeroVal
+   } else {
+      res[res == 0] <- zeroVal
+   }
+   return(res)
 }
 
 crukMagenta=rgb(236,0,140,maxColorValue=255) #CRUK Magenta
