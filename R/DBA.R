@@ -93,7 +93,7 @@ dba <- function(DBA,mask, minOverlap=2,
                    caller=peakCaller, format=peakFormat, scorecol=scoreCol,bLowerBetter=bLowerScoreBetter,
                    skipLines=skipLines,bAddCallerConsensus=bAddCallerConsensus, 
                    bRemoveM=bRemoveM, bRemoveRandom=bRemoveRandom,
-                   filter=filter, attributes=attributes)
+                   filter=filter, attributes=attributes, bNormalizeScores=FALSE)
    
    res$contrasts=NULL
    

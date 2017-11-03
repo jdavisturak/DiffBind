@@ -61,7 +61,7 @@ pv.peakset <-
                T, bRemoveRandom = T,
             minOverlap = 2,bFast = F,bMakeMasks = T,skipLines =
                1, filter = NULL, counts = NULL,
-            bNormalizeScores = FALSE
+            bNormalizeScores = TRUE
             ) {
       zeroVal <- -1
       bLog <- F
@@ -231,6 +231,7 @@ pv.peakset <-
                }
             }
             if (bNormalizeScores){
+                print "Normalizing scores"
                 peaks[,scoreCol] <-
                    pv.normalize(peaks,scoreCol,zeroVal = zeroVal,bLog = bLog)
                 if (bLowerScoreBetter) {
